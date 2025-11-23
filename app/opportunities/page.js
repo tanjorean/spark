@@ -1505,6 +1505,19 @@ const programs = [
   cost: "Team-based (registration required)",
   duration: "Academic year",
   website: "https://www.soinc.org"
+}, 
+,
+{
+  id: 119,
+  title: "Mass Mentoring Partnership Youth Leadership Council",
+  state: "Massachusetts",
+  description: "Biweekly leadership program bringing together diverse high school students to participate in the legislative process and youth advocacy. Members meet with State Legislators, organize Youth Mentoring Day, and lead peer advocate trainings. Includes $750 stipend.",
+  gradeLevel: [9, 10, 11, 12],
+  fields: ["Leadership & Civic Engagement", "Community Service"],
+  deadline: "2025-09-30",
+  cost: "Free ($750 stipend)",
+  duration: "October - May (biweekly meetings)",
+  website: "https://massmentors.org/our-work/youth-leadership-council/"
 }
 ]
 
