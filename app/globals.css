@@ -38,3 +38,21 @@ body {
 .animate-slide-in {
   animation: slide-in 0.3s ease-out;
 }
+/* Mobile Responsive Scaling */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  /* Better spacing on mobile */
+  .max-w-7xl {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
