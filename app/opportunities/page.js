@@ -122,7 +122,7 @@ const USMap = dynamic(() => import('../USMap'), {
 })
 
 export default function Page() {
-  const [selectedState, setSelectedState] = useState(null)
+  const [selectedState, setSelectedState] = useState("")
   const [selectedField, setSelectedField] = useState("All")
   const [selectedGrade, setSelectedGrade] = useState("All")
   const [searchTerm, setSearchTerm] = useState("")
@@ -1566,7 +1566,7 @@ return (
       <div id="explore" className="max-w-7xl mx-auto px-8 py-16">
         <div className="mb-8">
           <SmartSearch onSearch={handleSmartSearch} />
-          
+
   {/* Search Bar */}
   <div className="mb-6">
     <input
@@ -1651,7 +1651,7 @@ return (
         <button
           onClick={() => {
   setSelectedGrade("All")
-  setSelectedField("All")
+  setSelectedField("")
   setSelectedCategory("All")  // ← ADD THIS LINE
   setSearchTerm("")
   setSelectedState(null)
