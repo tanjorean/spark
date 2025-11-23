@@ -126,6 +126,7 @@ export default function Page() {
   const [selectedField, setSelectedField] = useState("All")
   const [selectedGrade, setSelectedGrade] = useState("All")
   const [searchTerm, setSearchTerm] = useState("")
+  const [resetKey, setResetKey] = useState(0)
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [user, setUser] = useState(null)
   const [bookmarkedPrograms, setBookmarkedPrograms] = useState([])
@@ -1565,7 +1566,7 @@ return (
 
       <div id="explore" className="max-w-7xl mx-auto px-8 py-16">
         <div className="mb-8">
-          <SmartSearch onSearch={handleSmartSearch} />
+   <SmartSearch key={resetKey} onSearch={handleSmartSearch} />
 
 
 
@@ -1646,6 +1647,7 @@ return (
   setSelectedCategory("All")
   setSearchTerm("")
   setSelectedState(null)
+    setResetKey(prev => prev + 1)
 }}
           className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition"
         >
