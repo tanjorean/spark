@@ -1567,16 +1567,7 @@ return (
         <div className="mb-8">
           <SmartSearch onSearch={handleSmartSearch} />
 
-  {/* Search Bar */}
-  <div className="mb-6">
-    <input
-      type="text"
-      placeholder="Search programs by title, description, or state..."
-      value={searchTerm}
-      onChange={(e) => setSearchTerm(e.target.value)}
-      className="w-full max-w-2xl mx-auto block px-6 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-    />
-  </div>
+
 
   {/* Filter Dropdowns */}
   <div className="flex gap-4 justify-center flex-wrap">
