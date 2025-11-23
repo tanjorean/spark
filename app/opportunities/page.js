@@ -1543,16 +1543,16 @@ const programs = [
 
 
   const getFilteredPrograms = () => {
-    return programs.filter(program => {
-      const matchesState = !selectedState || program.state === selectedState || program.state === "All States"
-      const matchesField = selectedField === "All" || program.fields.includes(selectedField)
-      const matchesGrade = selectedGrade === "All" || program.gradeLevel.includes(parseInt(selectedGrade))
-      const matchesSearch = searchTerm === "" || program.title.toLowerCase().includes(searchTerm.toLowerCase()) || program.description.toLowerCase().includes(searchTerm.toLowerCase())
-      const matchesCategory = selectedCategory === "All" || 
-                       (program.category && program.category === selectedCategory)
-      return matchesState && matchesField && matchesGrade && matchesSearch && matchesCategory
-    })
-  }
+  return programs.filter(program => {
+    const matchesState = !selectedState || program.state === selectedState || program.state === "All States"
+    const matchesField = selectedField === "" || !selectedField || program.fields.includes(selectedField) // CHANGED
+    const matchesGrade = selectedGrade === "All" || program.gradeLevel.includes(parseInt(selectedGrade))
+    const matchesSearch = searchTerm === "" || program.title.toLowerCase().includes(searchTerm.toLowerCase()) || program.description.toLowerCase().includes(searchTerm.toLowerCase())
+    const matchesCategory = selectedCategory === "All" || 
+                     (program.category && program.category === selectedCategory)
+    return matchesState && matchesField && matchesGrade && matchesSearch && matchesCategory
+  })
+}
 
   const filteredPrograms = getFilteredPrograms()
 return (
@@ -1642,8 +1642,8 @@ return (
         <button
           onClick={() => {
   setSelectedGrade("All")
-  setSelectedField("")
-  setSelectedCategory("All")  // ← ADD THIS LINE
+  setSelectedField("") // Changed from "All" to ""
+  setSelectedCategory("All")
   setSearchTerm("")
   setSelectedState(null)
 }}
