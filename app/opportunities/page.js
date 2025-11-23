@@ -122,8 +122,8 @@ const USMap = dynamic(() => import('../USMap'), {
 })
 
 export default function Page() {
-  const [selectedState, setSelectedState] = useState("")
-  const [selectedField, setSelectedField] = useState("All")
+  const [selectedState, setSelectedState] = useState(null)
+  const [selectedField, setSelectedField] = useState("")
   const [selectedGrade, setSelectedGrade] = useState("All")
   const [searchTerm, setSearchTerm] = useState("")
   const [resetKey, setResetKey] = useState(0)
