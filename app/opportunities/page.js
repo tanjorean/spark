@@ -8,7 +8,7 @@ import { collection, addDoc, deleteDoc, doc, query, where, getDocs } from "fireb
 import { auth, db } from "@/lib/firebase"
 import Toast from "../components/Toast"
 import Navbar from "@/app/components/Navbar"
-
+import SmartSearch from "../components/SmartSearch"
 
 function AuthPopup({ isOpen, onClose }) {
   const [isSignUp, setIsSignUp] = useState(true);
@@ -131,6 +131,26 @@ export default function Page() {
   const [bookmarkedPrograms, setBookmarkedPrograms] = useState([])
   const [isAuthOpen, setIsAuthOpen] = useState(false)
   const [toast, setToast] = useState({ show: false, message: '', type: 'success' })
+  const handleSmartSearch = (parsed) => {
+  // Apply filters based on parsed query
+  if (parsed.state) {
+    setSelectedState(parsed.state)
+  }
+  if (parsed.fields.length > 0) {
+    setSelectedField(parsed.fields[0]) // Use first detected field
+  }
+  if (parsed.category) {
+    setSelectedCategory(parsed.category)
+  }
+  if (parsed.grade) {
+    setSelectedGrade(parsed.grade.toString())
+  }
+  if (parsed.searchTerm) {
+    setSearchTerm(parsed.searchTerm)
+  }
+  
+  showToast(" Smart search applied!")
+}
 useEffect(() => {
   const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
     setUser(currentUser);
@@ -1545,6 +1565,8 @@ return (
 
       <div id="explore" className="max-w-7xl mx-auto px-8 py-16">
         <div className="mb-8">
+          <SmartSearch onSearch={handleSmartSearch} />
+          
   {/* Search Bar */}
   <div className="mb-6">
     <input
