@@ -31,7 +31,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 px-4 md:px-8 py-4 shadow-sm">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
+        <div className="max-w-7xl mx-auto flex justify-between items-center gap-4">
           {/* Logo */}
           <Link href="/" className="text-xl md:text-2xl font-bold text-blue-600 hover:text-blue-700 transition">
             Spark
