@@ -20,15 +20,23 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{
             __html: `
               function googleTranslateElementInit() {
-                new google.translate.TranslateElement(
-                  {
-                    pageLanguage: 'en',
-                    includedLanguages: 'es,zh-CN,fr,ar,pt,ru,hi,ko,vi,tl',
-                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-                  },
-                  'google_translate_element'
-                );
-              }
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en',
+      includedLanguages: 'es,zh-CN,fr,ar,pt,ru,hi,ko,vi,tl',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    },
+    'google_translate_element_desktop'
+  );
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en',
+      includedLanguages: 'es,zh-CN,fr,ar,pt,ru,hi,ko,vi,tl',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    },
+    'google_translate_element_mobile'
+  );
+}
             `,
           }}
         />
