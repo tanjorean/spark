@@ -59,7 +59,8 @@ export default function Navbar() {
               Contact
             </Link>
             <div className="h-6 w-px bg-gray-300"></div>
-            
+            <div id="google_translate_element" className="scale-90"></div>
+
             <NotificationBell user={user} />
             
             {user ? (
@@ -106,6 +107,7 @@ export default function Navbar() {
         {isMobileMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
             <div className="flex flex-col space-y-3">
+              <div id="google_translate_element" className="scale-90"></div>
               <Link 
                 href="/opportunities" 
                 onClick={() => setIsMobileMenuOpen(false)}
