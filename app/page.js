@@ -1299,13 +1299,13 @@ console.log("Current selectedState:", selectedState)
 <div className="relative overflow-hidden bg-gradient-to-br from-blue-600 to-blue-800">
   <div className="absolute inset-0 bg-black opacity-10"></div>
   <div className="relative max-w-7xl mx-auto px-8 py-24 text-center">
-    <h2 className="text-6xl font-bold text-white mb-6">
+    <h2 className="text-6xl font-bold text-white mb-6 animate-fade-in-up">
       Spark Your Future
     </h2>
-    <p className="text-2xl text-blue-50 mb-10 max-w-3xl mx-auto">
+    <p className="text-2xl text-blue-50 mb-10 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
       Discover thousands of academic programs, leadership opportunities, and competitions designed for high school students across all 50 states.
     </p>
-    <div className="flex gap-4 justify-center flex-wrap">
+    <div className="flex gap-4 justify-center flex-wrap animate-fade-in-up animation-delay-400">
       <Link 
         href="/opportunities" 
         className="bg-white text-blue-600 px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-block"
